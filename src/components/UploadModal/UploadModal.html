@@ -1,0 +1,18 @@
+<div id="upload-modal-overlay" class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h3 class="modal-title">Vector Database Indexer</h3>
+      <button id="upload-modal-close" class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body" style="display: flex; flex-direction: column; gap: 16px;">
+      <p class="text-sm" style="color: var(--text-secondary);">
+        Extracting text, generating embeddings, and indexing documents into the Chroma vector store.
+      </p>
+      
+      <!-- Upload progress list -->
+      <div id="modal-upload-list" style="display: flex; flex-direction: column; gap: 12px;">
+        <!-- Injected dynamic upload rows -->
+      </div>
+    </div>
+  </div>
+</div>

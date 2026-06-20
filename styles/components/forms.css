@@ -1,0 +1,81 @@
+/* Search Input Box */
+.input-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-search {
+  width: 100%;
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 10px 16px 10px 40px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.input-search:focus {
+  background: var(--glass-bg-hover, rgba(255, 255, 255, 0.7));
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(34, 139, 230, 0.1);
+}
+
+.input-search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Chat Prompt Text Area Box */
+.chat-prompt-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-lg);
+  padding: 14px 100px 14px 60px; /* Room for attachment pin on left, send button on right */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  resize: none;
+  min-height: 52px;
+  max-height: 150px;
+  box-shadow: var(--glass-shadow);
+  transition: all var(--transition-fast);
+}
+
+.chat-prompt-textarea:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+/* File Upload Dropzone */
+.file-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.25);
+  padding: 32px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.file-dropzone:hover,
+.file-dropzone.drag-over {
+  background: rgba(255, 255, 255, 0.45);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.file-dropzone-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}

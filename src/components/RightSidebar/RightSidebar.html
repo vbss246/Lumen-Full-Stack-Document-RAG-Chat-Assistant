@@ -1,0 +1,125 @@
+<!-- Calendar widget container -->
+<div class="right-sidebar-calendar-section">
+  <!-- Calendar wrapper -->
+  <div class="calendar-wrapper" id="calendar-widget-wrapper">
+    <div class="calendar-header">
+      <h3 id="calendar-month-year" class="text-sm font-semibold" style="font-family: var(--font-title); display: flex; align-items: center; gap: 8px;">
+        <span class="calendar-icon">
+          <!-- Calendar SVG Icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </span>
+        June 2026
+      </h3>
+      <div class="calendar-nav-buttons" style="display: flex; gap: 8px;">
+        <button id="calendar-prev-month" class="calendar-nav-btn" title="Previous Month">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button id="calendar-next-month" class="calendar-nav-btn" title="Next Month">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Calendar days headers (Mon, Tue...) -->
+    <div class="calendar-grid-headers">
+      <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+    </div>
+    
+    <!-- Calendar date boxes -->
+    <div id="calendar-days-grid" class="calendar-grid-days"></div>
+  </div>
+
+  <!-- Mechanical Clock/Timer Wrapper -->
+  <div class="calendar-wrapper" id="mechanical-clock-wrapper" style="display: none; padding: 16px; flex-direction: column; align-items: center; min-height: 310px;">
+    <!-- Circular Stopwatch Dial -->
+    <div class="mechanical-clock-container" style="display: flex; align-items: center; justify-content: center; width: 100%; position: relative; margin-bottom: 8px;">
+      <div class="mech-clock-wrapper" style="position: relative; width: 170px; height: 170px;">
+        <svg viewBox="0 0 100 100" style="width: 100%; height: 100%; overflow: visible;">
+          <!-- Background shadow dial -->
+          <circle cx="50" cy="50" r="48" fill="#141822" stroke="var(--card-border)" stroke-width="1.5" />
+          
+          <!-- Outer Dial Colored Segments -->
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="29 260" stroke-dashoffset="-22" stroke-linecap="round" />
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#f97316" stroke-width="2.5" stroke-dasharray="35 260" stroke-dashoffset="-246" stroke-linecap="round" />
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#eab308" stroke-width="2.5" stroke-dasharray="35 260" stroke-dashoffset="-205" stroke-linecap="round" />
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-dasharray="35 260" stroke-dashoffset="-164" stroke-linecap="round" />
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-dasharray="35 260" stroke-dashoffset="-123" stroke-linecap="round" />
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="35 260" stroke-dashoffset="-82" stroke-linecap="round" />
+
+          <!-- Outer tick ring -->
+          <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#eab308" stroke-width="2.5" stroke-dasharray="0.3 1.5" opacity="0.6" />
+          
+          <!-- Inner dial body -->
+          <circle cx="50" cy="50" r="34" fill="#0d1117" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+          
+          <!-- Gold dot grid patterns inside inner dial -->
+          <mask id="inner-dial-mask-right">
+            <circle cx="50" cy="50" r="33" fill="white" />
+          </mask>
+          <g mask="url(#inner-dial-mask-right)" opacity="0.2">
+            <pattern id="dot-grid-right" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
+              <circle cx="2.5" cy="2.5" r="0.5" fill="#eab308" />
+            </pattern>
+            <rect x="15" y="15" width="70" height="70" fill="url(#dot-grid-right)" />
+          </g>
+          
+          <!-- Sweep arcs -->
+          <circle class="clock-sweep-arc" cx="50" cy="50" r="26" fill="none" stroke="rgba(234, 179, 8, 0.2)" stroke-width="2" stroke-dasharray="75 160" stroke-dashoffset="0" />
+          <circle class="clock-sweep-arc-2" cx="50" cy="50" r="20" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="3" stroke-dasharray="40 160" stroke-dashoffset="-30" />
+
+          <!-- Center hub axle -->
+          <circle cx="50" cy="50" r="2.5" fill="#eab308" />
+          
+          <!-- Rotating clock hand (Straight Up initially) -->
+          <g id="clock-needle-group" style="transform-origin: 50px 50px; transform: rotate(0deg); transition: transform 0.05s linear;">
+            <line x1="50" y1="50" x2="50" y2="14" stroke="#eab308" stroke-width="1.8" stroke-linecap="round" />
+            <rect x="48.5" y="18" width="3" height="4" fill="#eab308" />
+          </g>
+        </svg>
+      </div>
+    </div>
+    
+    <!-- Timer digital printout (Moved below the circle dial entirely) -->
+    <div id="mech-timer-display" style="color: #eab308; font-family: monospace; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.05em; background: rgba(0,0,0,0.5); padding: 4px 14px; border-radius: 6px; border: 1px solid rgba(234, 179, 8, 0.2); pointer-events: none; margin-bottom: 12px; text-shadow: 0 0 4px rgba(234, 179, 8, 0.3);">
+      00:00.00
+    </div>
+
+    <!-- Stopwatch Settings Controls Panel -->
+    <div class="stopwatch-controls" style="display: flex; flex-direction: column; width: 100%; gap: 10px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+        <span class="text-xs font-semibold" style="color: var(--text-secondary);">Set Target Time:</span>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <input type="number" id="stopwatch-input-secs" min="1" max="9999" value="60" style="width: 55px; padding: 4px 6px; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--text-primary); font-family: monospace; font-size: 0.85rem; text-align: center;" />
+          <span class="text-xs" style="color: var(--text-muted);">sec</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button id="btn-stopwatch-start" class="btn-primary" style="flex: 1; padding: 6px 12px; font-size: 0.8rem; height: 32px; border-radius: var(--radius-sm); border: 1px solid rgba(249,115,22,0.3);">Start</button>
+        <button id="btn-stopwatch-reset" class="btn-secondary" style="flex: 1; padding: 6px 12px; font-size: 0.8rem; height: 32px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02);">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scrollable Chats on Selected Date Panel -->
+<div class="right-sidebar-chats-section">
+  <div class="filtered-chats-header">
+    <span id="filtered-chats-title">Chats on Selected Date</span>
+    <button id="btn-clear-date-filter" class="text-xs" style="color: var(--primary-color); display: none; font-weight: 500;" title="Clear date selection">Clear</button>
+  </div>
+  <!-- List -->
+  <div id="filtered-chats-list" class="filtered-chats-list">
+    <!-- Chats on selected date go here -->
+    <div class="no-filtered-chats">Select a date in the calendar to view chats created on that day.</div>
+  </div>
+</div>

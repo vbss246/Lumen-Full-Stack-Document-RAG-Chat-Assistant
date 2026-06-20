@@ -1,0 +1,21 @@
+# Python build and cache artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+.env
+
+# Vector database storage
+langchain_rag/chroma/
+langchain_rag/venv/
+langchain_rag/.env
+
+# Local agent configurations
+.agents/
+.gemini/
+.system_generated/
+*.log

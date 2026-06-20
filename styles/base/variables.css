@@ -1,0 +1,53 @@
+:root {
+  /* Color Palette */
+  --bg-gradient: linear-gradient(135deg, #d2e4ff 0%, #b8c6ff 50%, #b0f2ff 100%);
+  
+  --primary-gradient: linear-gradient(135deg, #7e5bef 0%, #6366f1 100%);
+  --secondary-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  --active-gradient: linear-gradient(135deg, #6c5ce7 0%, #a55eea 100%);
+
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --accent-color: #7e5bef;
+  
+  /* Text Colors */
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-white: #ffffff;
+  --text-white-muted: rgba(255, 255, 255, 0.8);
+  --primary-button-text: #ffffff;
+  --chat-bubble-user-text: #ffffff;
+  
+  /* Glassmorphism Styles */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-bg-hover: rgba(255, 255, 255, 0.65);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+  
+  --card-bg: rgba(255, 255, 255, 0.45);
+  --card-border: 1px solid rgba(255, 255, 255, 0.4);
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  
+  /* Sidebar Specifics */
+  --sidebar-bg: rgba(255, 255, 255, 0.4);
+  --sidebar-active-item: rgba(255, 255, 255, 0.6);
+  --sidebar-border: 1px solid rgba(255, 255, 255, 0.4);
+  
+  /* Chat Bubble Colors */
+  --chat-bubble-user: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --chat-bubble-ai: rgba(255, 255, 255, 0.7);
+  
+  /* Core Metrics */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --font-title: 'Outfit', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}

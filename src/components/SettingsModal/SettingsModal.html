@@ -1,0 +1,85 @@
+<div id="settings-modal-overlay" class="modal-overlay">
+  <div class="modal-container" style="max-width: 420px;">
+    <div class="modal-header">
+      <h3 class="modal-title" style="display: flex; align-items: center; gap: 8px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        Preferences Settings
+      </h3>
+      <button id="settings-modal-close" class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body" style="display: flex; flex-direction: column; gap: 20px;">
+      
+      <!-- Theme Selection Segment -->
+      <div class="settings-group">
+        <label for="settings-theme-select" class="settings-label text-sm font-semibold">Visual Background Style</label>
+        <div class="settings-select-wrapper">
+          <select id="settings-theme-select" class="settings-select">
+            <option value="default">Glassy Frost (Refraction & Ripples)</option>
+            <option value="midnight">Mechanical Gears (Anime.js Clockwork & Charcoal)</option>
+          </select>
+        </div>
+        <p class="text-xs" style="color: var(--text-muted); margin-top: 6px;">Changes the page color scheme, backgrounds, and gradient glows.</p>
+      </div>
+
+      <!-- Background Image Option (Only visible when Glassy Frost is active) -->
+      <div class="settings-group" id="settings-bg-select-group" style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 16px;">
+        <label for="settings-bg-select" class="settings-label text-sm font-semibold">Glassy Background Image</label>
+        <div class="settings-select-wrapper">
+          <select id="settings-bg-select" class="settings-select">
+            <option value="images/misty_forest.png">Misty Pine Forest (Default)</option>
+            <option value="images/foggy_mountain.png">Foggy Mountain Range</option>
+            <option value="images/frozen_lake.png">Frozen Aurora Lake</option>
+          </select>
+        </div>
+        <p class="text-xs" style="color: var(--text-muted); margin-top: 6px;">Select the background image backdrop to refract under the glassy panels.</p>
+      </div>
+
+      <!-- Water Ripple Switch Segment (Only visible when Glassy Frost is active) -->
+      <div class="settings-group" id="settings-ripple-toggle-group" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 16px;">
+        <div>
+          <span class="settings-label text-sm font-semibold" style="display: block;">Water Ripple Background</span>
+          <span class="text-xs" style="color: var(--text-muted);">Clicks and moves on the background spawn expanding ripples.</span>
+        </div>
+        <label class="settings-toggle">
+          <input type="checkbox" id="settings-ripple-toggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <!-- Mechanical Clock Toggle (Only visible when Mechanical Gears is active) -->
+      <div class="settings-group" id="settings-clock-toggle-group" style="display: none; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 16px;">
+        <div>
+          <span class="settings-label text-sm font-semibold" style="display: block;">Show Clock Widget</span>
+          <span class="text-xs" style="color: var(--text-muted);">Replace the calendar section with an animated mechanical clock/timer.</span>
+        </div>
+        <label class="settings-toggle">
+          <input type="checkbox" id="settings-clock-toggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <!-- Scroll Globe Toggle (Only visible when Mechanical Gears is active) -->
+      <div class="settings-group" id="settings-scroll-toggle-group" style="display: none; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 16px;">
+        <div>
+          <span class="settings-label text-sm font-semibold" style="display: block;">Scroll-Driven Globe</span>
+          <span class="text-xs" style="color: var(--text-muted);">Displays a glowing green wireframe globe in the background when scrolling.</span>
+        </div>
+        <label class="settings-toggle">
+          <input type="checkbox" id="settings-scroll-toggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <!-- System Reset Segment -->
+      <div class="settings-group" style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 16px; margin-top: 8px;">
+        <button id="btn-reset-storage" class="btn-secondary" style="width: 100%; color: #ef4444; border-color: rgba(239, 68, 68, 0.2); background: rgba(239, 68, 68, 0.05); font-weight: 600;">
+          Reset Local Database
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
