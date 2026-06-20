@@ -124,7 +124,16 @@ If you have documents you want to ingest offline instead of uploading them via t
 * **Similarity Threshold**: In [app.py: L46](file:///E:/Project%201/langchain_rag/app.py#L46), similarity matching is filtered at a `0.65` relevance threshold. Adjust this value to make results stricter or looser.
 
 
+### Output/ weblayout
 
 <img width="1919" height="864" alt="Screenshot 2026-06-20 190827" src="https://github.com/user-attachments/assets/ae3857fd-19db-4407-825d-f259263a7ecb" />
+<img width="1919" height="870" alt="Screenshot 2026-06-20 190843" src="https://github.com/user-attachments/assets/d05e6704-774e-4c5f-ad8a-e4f6b41f893d" />
+<img width="1919" height="869" alt="Screenshot 2026-06-20 191001" src="https://github.com/user-attachments/assets/ba326d94-cf3c-41fb-96c1-8bf5b23cf98b" />
+<img width="540" height="698" alt="Screenshot 2026-06-20 191015" src="https://github.com/user-attachments/assets/e9fdd2de-9fe5-40ee-b857-9fabea3484e5" />
+<img width="1919" height="861" alt="Screenshot 2026-06-20 191046" src="https://github.com/user-attachments/assets/89eb76e8-2743-465a-8712-f85fd749c37e" />
+
+
+
+
 
 
