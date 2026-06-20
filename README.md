@@ -125,3 +125,6 @@ If you have documents you want to ingest offline instead of uploading them via t
 
 
 
+<img width="1919" height="864" alt="Screenshot 2026-06-20 190827" src="https://github.com/user-attachments/assets/ae3857fd-19db-4407-825d-f259263a7ecb" />
+
+
